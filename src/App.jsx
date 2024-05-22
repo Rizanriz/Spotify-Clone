@@ -6,7 +6,7 @@ import { PlayerContext } from './PlayerContext'
 
 const App = () => {
 
-  const {audioRef} = useContext(PlayerContext)
+  const {audioRef,track} = useContext(PlayerContext)
 
   return (
     <div className='h-screen bg-slate-950 '>
@@ -15,7 +15,7 @@ const App = () => {
         <Display/>
       </div>
       <Player/>
-      <audio ref={audioRef} preload='auto'></audio>
+      <audio ref={audioRef} src={track.file} preload='auto'></audio>
     </div>
   )
 }
